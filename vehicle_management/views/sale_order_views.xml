@@ -1,0 +1,29 @@
+<odoo>
+    <record id="view_order_form" model="ir.ui.view">
+        <field name="name">sale.order.form.inherit.vehicle</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//group[@name='order_lines']" position="inside">
+                <group>
+                    <field name="vehicle_id" domain="[('customer_id', '=', partner_id)]" string="Vehicle Number"/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+    <record id="view_order_tree" model="ir.ui.view">
+        <field name="name">sale.order.tree.inherit.vehicle</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_tree"/>
+        <field name="arch" type="xml">
+            <!-- Add Vehicle Number field to the tree view -->
+            <xpath expr="//tree" position="inside">
+                <field name="vehicle_id"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>
+
+
+

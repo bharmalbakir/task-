@@ -1,0 +1,33 @@
+
+<odoo>
+    <record id="action_vehicle_brand_tree" model="ir.actions.act_window">
+        <field name="name">Vehicle Brands</field>
+        <field name="res_model">vehicle.brand</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="view_vehicle_brand_tree" model="ir.ui.view">
+        <field name="name">vehicle.brand.tree</field>
+        <field name="model">vehicle.brand</field>
+        <field name="arch" type="xml">
+            <tree string="Vehicle Brands">
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_vehicle_brand_form" model="ir.ui.view">
+        <field name="name">vehicle.brand.form</field>
+        <field name="model">vehicle.brand</field>
+        <field name="arch" type="xml">
+            <form string="Vehicle Brand">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>
+

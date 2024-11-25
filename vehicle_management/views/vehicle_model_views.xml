@@ -1,0 +1,39 @@
+<odoo>
+    <record id="action_vehicle_model_wizard" model="ir.actions.act_window">
+        <field name="name">Add Vehicle Model</field>
+        <field name="res_model">vehicle.model</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+    <record id="view_vehicle_model_tree" model="ir.ui.view">
+        <field name="name">vehicle.model.tree</field>
+        <field name="model">vehicle.model</field>
+        <field name="arch" type="xml">
+            <tree string="Vehicle Models">
+                <field name="name"/>
+                <field name="brand_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_vehicle_model_form" model="ir.ui.view">
+        <field name="name">vehicle.model.form</field>
+        <field name="model">vehicle.model</field>
+        <field name="arch" type="xml">
+            <form string="Vehicle Model">
+                <header>
+                    <button string="Add Model" type="action" name="%(action_vehicle_model_wizard)d"
+                            class="oe_highlight"/>
+                </header>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="brand_id"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>
+

@@ -1,0 +1,63 @@
+
+<odoo>
+    <menuitem id="vehicle_management_menu"
+              name="Vehicle Management"
+              sequence="1"/>
+
+    <menuitem id="menu_vehicle_details"
+              name="Vehicle Details"
+              parent="vehicle_management_menu"
+              sequence="1"/>
+
+    <menuitem id="vehicle_master_menu"
+              name="Vehicle Master"
+              sequence="2"
+              action="action_vehicle_master"/>
+
+    <record id="action_vehicle_brand" model="ir.actions.act_window">
+        <field name="name">Vehicle Brand</field>
+        <field name="res_model">vehicle.brand</field>
+        <field name="view_mode">tree,form</field>
+        <field name="target">current</field>
+    </record>
+
+    <record id="action_vehicle_model" model="ir.actions.act_window">
+        <field name="name">Vehicle Model</field>
+        <field name="res_model">vehicle.model</field>
+        <field name="view_mode">tree,form</field>
+        <field name="target">current</field>
+    </record>
+
+    <record id="action_vehicle_details" model="ir.actions.act_window">
+        <field name="name">Vehicle Details</field>
+        <field name="res_model">vehicle.details</field>
+        <field name="view_mode">tree,form</field>
+        <field name="target">current</field>
+    </record>
+
+    <record id="action_vehicle_master" model="ir.actions.act_window">
+        <field name="name">Vehicle Master</field>
+        <field name="res_model">vehicle.master</field>
+        <field name="view_mode">tree,form</field>
+        <field name="target">current</field>
+    </record>
+
+    <menuitem id="menu_vehicle_brand"
+              name="Brand Name"
+              parent="menu_vehicle_details"
+              action="action_vehicle_brand"
+              sequence="1"/>
+
+    <menuitem id="menu_vehicle_model"
+              name="Model Name"
+              parent="menu_vehicle_details"
+              action="action_vehicle_model"
+              sequence="2"/>
+
+    <menuitem id="menu_vehicle_details_records"
+              name="Vehicle Records"
+              parent="menu_vehicle_details"
+              action="action_vehicle_details"
+              sequence="3"/>
+
+</odoo>

@@ -1,0 +1,24 @@
+
+
+<odoo>
+    <record id="view_vehicle_master_tree" model="ir.ui.view">
+        <field name="name">vehicle.master.tree</field>
+        <field name="model">vehicle.master</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="vehicle_number"/>
+                <field name="brand_name"/>
+                <field name="model_name"/>
+                <field name="owner"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_vehicle_master" model="ir.actions.act_window">
+        <field name="name">Vehicle Master</field>
+        <field name="res_model">vehicle.master</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="view_vehicle_master_tree"/>
+        <field name="target">current</field>
+    </record>
+</odoo>
